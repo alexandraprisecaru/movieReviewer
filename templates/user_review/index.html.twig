@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}UserReview index{% endblock %}
+
+{% block body %}
+    <h1>UserReview index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>FirstName</th>
+                <th>Role</th>
+                <th>LastName</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user_review in user_reviews %}
+            <tr>
+                <td>{{ user_review.id }}</td>
+                <td>{{ user_review.username }}</td>
+                <td>{{ user_review.password }}</td>
+                <td>{{ user_review.firstName }}</td>
+                <td>{{ user_review.role }}</td>
+                <td>{{ user_review.lastName }}</td>
+                <td>
+                    <a href="{{ path('user_review_show', {'id': user_review.id}) }}">show</a>
+                    <a href="{{ path('user_review_edit', {'id': user_review.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('user_review_new') }}">Create new</a>
+{% endblock %}
