@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.2.1/cerulean/bootstrap.min.css">
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        <div class="container">
+            {{ render(controller('App\\Controller\\SearchController::index'))}}
+            <div class="card" style="padding: 40px;">
+
+                {% block body %}
+                    {% form_theme form 'bootstrap_4_layout.html.twig' %}
+                {% endblock %}
+            </div>
+        </div>
+        
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,94 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Movie{% endblock %}
+
+{% block body %}
+<style>
+    .rightAlign {text-align:right; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    .bold{ font-weight:bold;}
+</style>
+
+    <div class="form-group row">
+        <div class="col-sm-2">
+        </div>
+        <div class="col-sm-8 form-group">
+            <h1>Movie</h1>
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <p class="col-sm-2 rightAlign bold">
+        Id:
+        </p>
+        <div class="col-sm-8 form-group">
+            {{ movie.id }}
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <p class="col-sm-2 rightAlign bold">
+        Title:
+        </p>
+        <div class="col-sm-8 form-group">
+            {{ movie.title }}
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <p class="col-sm-2 rightAlign bold">
+        Description:
+        </p>
+        <div class="col-sm-8 form-group">
+            {{ movie.description }}
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <p class="col-sm-2 rightAlign bold">
+        Year:
+        </p>
+        <div class="col-sm-8 form-group">
+            {{ movie.year }}
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <p class="col-sm-2 rightAlign bold"> Genre: </p>
+        <div class="col-sm-8 form-group">
+            {{ movie.genre }}
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <p class="col-sm-2 rightAlign bold"> Trailer: </p>
+        <a class="col-sm-8 form-group" href={{movie.trailer}}>
+            {{ movie.trailer }}
+        </a>
+    </div>
+    
+    <div class="form-group row">
+        <p class="col-sm-2 rightAlign bold">
+        Rating:
+        </p>
+        <div class="col-sm-8 form-group">
+            {{ movie.rating }}
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8 form-group">
+            <a class="btn btn-primary" href="{{ path('movie_index') }}">Back</a>
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8 form-group" style="display:inline-flex;">
+             <a class="btn btn-link" style="padding-left:0;" href="{{ path('movie_edit', {'id': movie.id}) }}">Edit</a>
+            {{ include('movie/_delete_form.html.twig') }}
+        </div>
+    </div>
+
+{% endblock %}

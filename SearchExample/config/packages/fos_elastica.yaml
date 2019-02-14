@@ -1,0 +1,34 @@
+
+# Read the documentation: https://github.com/FriendsOfSymfony/FOSElasticaBundle/blob/master/Resources/doc/setup.md
+
+fos_elastica:
+    clients:
+        default: { host: localhost, port: 9200 }
+    indexes:
+        app:
+            finder: ~
+            settings:
+                index:
+                    analysis:
+                        analyzer:
+                            name_analyzer:
+                                type: custom
+                                tokenizer: standard
+                                filter: [standard, lowercase, asciifolding, elision]
+            types:
+                movie:
+                    properties:
+                        name_suggest:
+                            type: completion
+                            analyzer: name_analyzer
+                            search_analyzer: name_analyzer
+                        id:
+                            type: keyword
+                        title:
+                            type: keyword
+                    persistence:
+                        driver: orm
+                        model: App\Entity\Movie
+                        provider: ~
+                        listener: ~
+                        finder: ~

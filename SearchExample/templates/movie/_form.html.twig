@@ -1,0 +1,77 @@
+
+{{ form_start(form) }}
+<style>
+    .rightAlign {text-align:right; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="form-group row">
+    <div class="col-sm-2  col-form-label rightAlign">
+    {{ form_label(form.title, "Title:") }}
+    </div>
+    <div class="col-sm-8 form-group">
+        {{ form_widget(form.title) }}
+    </div>
+</div>
+
+<div  class="form-group row">
+    <div class="col-sm-2 col-form-label rightAlign">
+        {{ form_label(form.description, "Description:") }}
+    </div>
+    <div class="col-sm-8 form-group">
+        {{ form_widget(form.description) }}
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-sm-2 col-form-label rightAlign">
+        {{ form_label(form.year, "Year:") }}
+    </div>
+    <div class="col-sm-8 form-group">
+        {{ form_widget(form.year) }}
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-sm-2 col-form-label rightAlign">
+        {{ form_label(form.genre, "Genre:") }}
+    </div>
+    <div class="col-sm-8 form-group">
+        {{ form_widget(form.genre) }}
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-sm-2 col-form-label rightAlign">
+        {{ form_label(form.trailer, "Trailer:") }}
+    </div>
+    <div class="col-sm-8 form-group">
+        {{ form_widget(form.trailer) }}
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-sm-2 col-form-label rightAlign">
+        {{ form_label(form.rating, "Rating:") }}
+    </div>
+    <div class="col-sm-8 form-group">
+        {{ form_widget(form.rating) }}
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-sm-2 col-form-label rightAlign">
+        {{ form_label(form.idActor, "Actors: ") }}
+    </div>
+    <div class="col-sm-8 form-group">
+        {{ form_widget(form.idActor) }}
+    </div>
+</div>
+<div class="form-group row">
+    <div class="col-sm-2 col-form-label rightAlign"></div>
+    <div class="col-sm-8 form-group">
+        <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
+    </div>
+</div>
+
+{{ form_end(form) }}

@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Actor index{% endblock %}
+
+{% block body %}
+    <h1>Actors</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Firstname</th>
+                <th scope="col">Lastname</th>
+                <th scope="col">Description</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for actor in actors %}
+            <tr scope="row">
+                <td>{{ actor.id }}</td>
+                <td>{{ actor.firstName }}</td>
+                <td>{{ actor.lastName }}</td>
+                <td>{{ actor.description }}</td>
+                <td class="row">
+                    <a href="{{ path('actor_show', {'id': actor.id}) }}">Show</a>
+                    <p>&nbsp;|&nbsp;</p>
+                    <a href="{{ path('actor_edit', {'id': actor.id}) }}">Edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('actor_new') }}">Create new</a>
+{% endblock %}
