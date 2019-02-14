@@ -26,7 +26,7 @@
                 <td>{{ movie.description }}</td>
                 <td>{{ movie.year }}</td>
                 <td>{{ movie.genre }}</td>
-                <td><a href={{ movie.trailer }}/>{{ movie.trailer }}</td>
+                <td><a href={{ movie.trailer }}/>{{ movie.title }} trailer</td>
                 <td>{{ movie.rating }}</td>
                 <td class="row">
                     <a href="{{ path('movie_show', {'id': movie.id}) }}">Show</a>

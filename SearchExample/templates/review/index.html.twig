@@ -3,28 +3,29 @@
 {% block title %}Review index{% endblock %}
 
 {% block body %}
-    <h1>Review index</h1>
+    <h1>Reviews</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Comment</th>
-                <th>Rating</th>
-                <th>actions</th>
+                <th scope="col">Id</th>
+                <th scope="col">Title</th>
+                <th scope="col">Comment</th>
+                <th scope="col">Rating</th>
+                <th scope="col">actions</th>
             </tr>
         </thead>
         <tbody>
         {% for review in reviews %}
-            <tr>
+            <tr scope="row">
                 <td>{{ review.id }}</td>
                 <td>{{ review.title }}</td>
                 <td>{{ review.comment }}</td>
                 <td>{{ review.rating }}</td>
-                <td>
-                    <a href="{{ path('review_show', {'id': review.id}) }}">show</a>
-                    <a href="{{ path('review_edit', {'id': review.id}) }}">edit</a>
+                 <td class="row">
+                    <a href="{{ path('review_show', {'id': review.id}) }}">Show</a>
+                    <p>&nbsp;|&nbsp;</p>
+                    <a href="{{ path('review_edit', {'id': review.id}) }}">Edit</a>
                 </td>
             </tr>
         {% else %}
