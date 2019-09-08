@@ -177,7 +177,7 @@ class UserReview implements UserInterface, \Serializable
      */
     public function getRoles()
     {
-        return array('ROLE_USER');
+        return ['ROLE_USER', 'ROLE_ADMIN'];
     }
 
     /**
@@ -215,9 +215,7 @@ class UserReview implements UserInterface, \Serializable
             $this->id,
             $this->username,
             $this->firstName,
-            $this->lastName,
-            $this->password,
-            $this->role
+            $this->lastName
         ]);
     }
 
@@ -237,8 +235,6 @@ class UserReview implements UserInterface, \Serializable
             $this->username,
             $this->firstName,
             $this->lastName,
-            $this->password,
-            $this->role
-            ) = $this->unserialize($string, ['allowed_classes' => false]);
+            ) = unserialize($string, ['allowed_classes' => true]);
     }
 }

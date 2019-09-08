@@ -7,10 +7,10 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        <div class="container">
-            <div style="text-align:center;">
+        <div class="container">        
+            {# <div style="text-align:center;">
                 {{ render(controller('App\\Controller\\SearchController::index'))}}
-            </div>
+            </div> #}
             <div class="d-flex justify-content-around" style="display:inline-flex; padding:10px;">
                 <a class="btn btn-success" href="{{ path('movie_index') }}">Show movies</a>
                 <a class="btn btn-success" href="{{ path('actor_index') }}">Show actors</a>

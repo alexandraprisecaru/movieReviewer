@@ -25,12 +25,4 @@ class LoginController extends AbstractController
             'lastUsername' => $lastUsername
         ]);
     }
-
-    // /**
-    // * @Route("/logout", name = "logout")
-    // */
-    // public function logout()
-    // {
-
-    // }
 }

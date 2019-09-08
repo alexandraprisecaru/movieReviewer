@@ -19,9 +19,9 @@ class UserFixture extends Fixture
     public function load(ObjectManager $manager)
     {
         $user = new UserReview();
-        $user->setUsername('alle');
+        $user->setUsername('ale');
         $user->setPassword(
-            $this->encoder->encodePassword($user, 'password'));
+            $this->encoder->encodePassword($user, 'parola'));
 
         $user->setFirstName('Alexandra');
         $user->setLastName('P');
